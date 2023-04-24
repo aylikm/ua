@@ -1,0 +1,71 @@
+@import '_destyle.scss';
+
+$transitionTime: 0.3s;
+$opacityVal: 0.5;
+
+@mixin pc {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+.pc-none {
+  @include pc {
+    display: none !important;
+  }
+}
+
+.sp-none {
+  @include sp {
+    display: none !important;
+  }
+}
+
+.fadein {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+
+  &.show {
+    opacity: 1;
+
+    &.delay {
+      @include pc {
+        transition-delay: 0.3s;
+      }
+    }
+  }
+}
+
+.fadeinCreditTarget {
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+main {
+  overflow: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-family: 'Hiragino Mincho Pro', 'ヒラギノ明朝 Pro', 'YuMincho', '游明朝体', '游明朝', serif;
+
+  * {
+    line-height: 1;
+    // letter-spacing: 0.02em;
+  }
+}
+
+@import '_common.scss';
+@import '_look.scss';
+@import '_item.scss';
+@import '_footer.scss';

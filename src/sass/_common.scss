@@ -1,0 +1,343 @@
+@mixin listItem {
+  position: relative;
+
+  @include pc {
+    width: 50%;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 8 / 9;
+    transition: 0.1s;
+
+    @include sp {
+      aspect-ratio: 375 / 577;
+    }
+  }
+}
+
+@mixin btn($bgColor, $textColor) {
+  pointer-events: none;
+  display: flex;
+  width: unquote('clamp(45px, 4vw, 75px)');
+  height: unquote('clamp(12px, 1.2vw, 22px)');
+  font-size: unquote('clamp(10px, 1vw, 19px)');
+  justify-content: center;
+  align-items: center;
+  background: $bgColor;
+  color: $textColor;
+
+  @include sp {
+    width: unquote('max(12vw, 45px)');
+    height: unquote('max(3.3vw, 12.5px)');
+    font-size: unquote('max(2.9vw, 11px)');
+  }
+}
+
+.common {
+  &-firstview {
+    position: relative;
+    
+    @include pc {
+      height: 56.25vw;
+    }
+
+    @include sp {
+      height: 177.87vw;
+    }
+
+    &-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 1.64s cubic-bezier(0.645, 0.045, 0.355, 1), filter 0.9s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+      opacity: 0;
+      transform: scale(1.05);
+      filter: blur(4px);
+      will-change: filter, transform, opacity;
+
+      .loaded & {
+        transform: scale(1);
+        opacity: 1;
+        filter: none;
+      }
+
+      img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+
+        @include sp {
+          aspect-ratio: 375 / 667;
+        }
+      }
+    }
+
+    h1 {
+      opacity: 0;
+      transition: opacity 0.8s 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: absolute;
+      top: 50%;
+      left: calc(50% + 38px);
+      transform: translate(-50%, -50%);
+      width: 21.155vw;
+
+      @include sp {
+        width: 60.5vw;
+        left: 50%;
+      }
+
+      .loaded & {
+        opacity: 1;
+      }
+      
+      img {
+        aspect-ratio: 406 / 489;
+        width: 100%;
+      }
+
+    }
+  }
+
+  &-Nav {
+    opacity: 0;
+    transition: opacity 0.8s 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: fixed;
+    z-index: 100;
+    right: unquote('min(7.8vw, 150px)');
+    top: unquote('min(1.5vw, 28px)');
+    font-family: 'EB Garamond', serif;
+
+    @include pc {
+
+    }
+
+    @include sp {
+      right: unquote('min(-10.5vw, -39px)');
+      top: unquote('max(20vw, 75px)');
+      transform: rotate(90deg);
+    }
+
+    .loaded & {
+      opacity: 1;
+    }
+    
+    ul {
+      display: flex;
+      gap: unquote('min(1.5vw, 29px)');
+
+      @include sp {
+        gap: unquote('max(5.9vw, 22px)');
+      }
+      
+      a {
+        display: block;
+        letter-spacing: 0;
+        font-size: unquote('min(1.7vw, 30px)');
+        font-weight: bold;
+
+        @include sp {
+          font-size: unquote('max(5.2vw, 19.5px)');
+        }
+
+        &.current {
+          pointer-events: none;
+          padding-bottom: 3px;
+          display: flex;
+          flex-direction: column;
+
+          &::after {
+            display: block;
+            content: '';
+            width: 100%;
+            height: 1px;
+            background: #000;
+            margin-top: -2px;
+          }
+        }
+        
+        &:not(.current) {
+          opacity: 0.5;
+          transition: opacity 0.5s;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &-lead {
+    text-align: center;
+    font-size: unquote('min(1.2vw, 21px)');
+    line-height: 2;
+    margin: unquote('min(3vw, 55px)') 0;
+    letter-spacing: 0;
+
+    @include sp {
+      font-size: unquote('max(2.8vw, 10.5px)');
+      margin: unquote('max(8.2vw, 31px) 0 max(7.5vw, 28px)');
+    }
+  }
+
+  &-Totop {
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+    cursor: pointer;
+    font-size: 24px;
+
+    @include pc {
+      margin-bottom: 192px;
+    }
+
+    @include sp {
+      font-size: 18px;
+    }
+  }
+
+  &-Modal {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+    z-index: -1;
+    
+    &.active {
+      z-index: 1000;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &-Bg {
+      opacity: 0.2;
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
+
+    &-Contents {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1001;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      
+      @include pc {
+        min-width: 514px;
+        min-height: 310px;
+        padding: 60px;
+      }
+
+      @include sp {
+        width: 86.67vw;
+        min-height: 174px;
+        margin: 0 auto;
+        padding: 33px 20px;
+        font-size: 11.5px;
+
+        * {
+          letter-spacing: 0;
+        }
+      }
+    }
+
+    &-Text {
+      letter-spacing: 0;
+      line-height: 1.6;
+
+      @include pc {
+        font-size: 20px;
+        margin: -7px 0 26px;
+      }
+
+      @include sp {
+        margin: -1px 0 11px;
+      }
+    }
+
+    &-Close {
+      width: 22px;
+      height: 22px;
+      position: absolute;
+      top: 15px;
+      right: 21px;
+      cursor: pointer;
+
+      @include sp {
+        width: 14px;
+        height: 14px;
+        top: 11px;
+        right: 14px;
+      }
+
+      &::after,
+      &::before {
+        content: '';
+        display: block;
+        border-bottom: 2px solid #707070;
+        position: relative;
+
+        @include sp {
+          border-width: 1px;
+        }
+      }
+
+      &::after {
+        top: 8px;
+        transform: rotate(45deg);
+
+        @include sp {
+          top: 5px;
+        }
+      }
+
+      &::before {
+        top: 10px;
+        transform: rotate(-45deg);
+
+        @include sp {
+          top: 6px;
+        }
+      }
+    }
+
+    &-Num {
+      font-weight: 600;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      font-size: 27px;
+      margin-bottom: 7px;
+      line-height: 1.8;
+      letter-spacing: 0;
+
+      @include sp {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+    }
+
+    &-Brand {
+      letter-spacing: 0;
+      font-size: 18px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+
+      @include pc {
+        white-space: nowrap;
+      }
+
+      @include sp {
+        font-size: 10.5px;
+        line-height: 1.5;
+      }
+    }
+  }
+}

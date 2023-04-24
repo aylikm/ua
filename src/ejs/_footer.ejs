@@ -1,0 +1,44 @@
+<% const sns = [
+  {
+    link: 'http://www.facebook.com/share.php?u=',
+    name: 'facebook'
+  },
+  {
+    link: 'https://twitter.com/share?url=',
+    name: 'twitter'
+  },
+  {
+    link: 'https://timeline.line.me/social-plugin/share?url=',
+    name: 'line'
+  },
+] %>
+
+<footer class="footer">
+  <h2>BEAUTY&YOUTH MEN<br>2023 summer</h2>
+  <p class="footer-Totop js-toTop">Back to Top</p>
+
+  <ul class="footer-Links">
+    <li><a href="https://store.united-arrows.co.jp/s/brand/by/feature/fb202200235/">掲載アイテム一覧は<strong>こちら</strong></a></li>
+    <li><a href="https://store.united-arrows.co.jp/search?br=BY000&lm=10M1&sst1n=3&ff=1">メンズのアイテム一覧は<strong>こちら</strong></a></li>
+  </ul>
+  
+  <div class="footer-sns">
+    <strong>Share</strong>
+    <ul>
+      <% sns.forEach(function(data) { %>
+      <li>
+        <a href="<%- data.link %><%- url %><%- current %>.html" target="_blank">
+          <img src="./img/<%- data.name %>.svg" alt="<%- data.name %>">
+        </a>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+
+  <h3>
+    <a href="https://store.united-arrows.co.jp/brand/by/">
+      <img src="./img/logo.svg" alt="BEAUTY&YOUTH UNITED ARROWS">
+    </a>
+  </h3>
+  <p class="footer-Copy">&copy; UNITED ARROWS LTD. ALL RIGHTS RESERVED.</p>
+</footer>

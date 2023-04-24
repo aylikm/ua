@@ -1,0 +1,261 @@
+.item {
+  &-list {
+    @include pc {
+      display: flex;
+
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+
+        .item-list-item-desc {
+          bottom: unquote('min(8.4vw, 148px)');
+          left: unquote('min(8.4vw, 150px)');
+        }
+      }
+
+      &:nth-of-type(1) li {
+        background: #BABE8E;
+      }
+      &:nth-of-type(2) li {
+        background: #E8E8E8;
+      }
+      &:nth-of-type(3) li {
+        background: #E8E8E8;
+  
+        .item-list-item-desc {
+          bottom: unquote('min(8.4vw, 140px)');
+        }
+  
+        .item-credit {
+          margin-top: unquote('min(2.8vw, 47px)');
+        }
+      }
+      &:nth-of-type(4) li {
+        background: #D7BB8C;
+  
+        .item-list-item-desc {
+          bottom: unquote('min(8.4vw, 158px)');
+        }
+      }
+      &:nth-of-type(5) li {
+        background: #E8E8E8;
+      }
+      &:nth-of-type(6) li {
+        background: #76AFCD;
+  
+        .item-list-item-desc {
+          bottom: unquote('min(8.4vw, 154px)');
+        }
+      }
+      &:nth-of-type(7) li {
+        background: #E8E8E8;
+      }
+      &:nth-of-type(8) li {
+        background: #CACACC;
+  
+        .item-list-item-desc {
+          bottom: unquote('min(8.4vw, 153px)');
+        }
+  
+        .item-credit {
+          width: fit-content;
+  
+          a {
+            width: 100%;
+            justify-content: space-between;
+          }
+        }
+      }
+      &:nth-of-type(9) li {
+        background: #D9C36E;
+        
+        .item-list-item-desc {
+          bottom: unquote('min(8.4vw, 158px)');
+        }
+  
+        .item-credit {
+          margin-top: unquote('min(2.8vw, 52px)');
+        }
+      }
+    }
+
+    @include sp {
+      &:nth-of-type(3) .item-list-item:nth-of-type(2) {
+        .item-credit {
+          // margin-top: unquote('max(7.2vw, 27px)');
+          // gap: unquote('max(4vw, 15px)');
+
+          &-item-detail {
+            min-width: unquote('max(39.4vw, 148px)');
+          }
+        }
+      }
+
+      // &:nth-of-type(4) .item-list-item:nth-of-type(2) {
+      //   padding: 28px 25px 34px;
+      // }
+
+      &:nth-of-type(5) img {
+        aspect-ratio: 1 / 1;
+      }
+
+      &:nth-of-type(6) {
+        // .item-list-item:nth-of-type(2) {
+        //   padding: 32px 25px;
+        // }
+
+        .item-credit-item-detail {
+          min-width: unquote('max(14.4vw, 54.2px)');
+        }
+      }
+
+      // &:nth-of-type(7) .item-list-item:nth-of-type(2) {
+      //   padding: 29px 25px 34px;
+      // }
+
+      &:nth-of-type(8) .item-list-item:nth-of-type(2) {
+        .item-credit-item-detail {
+          min-width: unquote('max(57.3vw, 215px)');
+        }
+      }
+
+      &:nth-of-type(9) .item-list-item:nth-of-type(2) {
+        // padding-bottom: 34px;
+
+        .item-credit {
+          // margin-top: 30px;
+
+          &-item-detail {
+            min-width: unquote('max(16vw, 60px)');
+          }
+        }
+      }
+    }
+
+    &-item {
+      @include listItem;
+
+      @include sp {
+        background: #e8e8e8;
+        
+        &:nth-of-type(2) {
+          padding: unquote('max(8.2vw, 31px)') unquote('max(6.6vw, 25px)') unquote('max(9.3vw, 35px)');
+        }
+      }
+
+      &-desc {
+        @include pc {
+          padding-right: 8.1vw;
+          position: absolute;
+          bottom: unquote('min(8.4vw, 158px)');
+          left: unquote('min(8.1vw, 160px)');
+        }
+      }
+
+      &-lead {
+        font-size: unquote('clamp(10px, 1.2vw, 21px)');
+        line-height: 1.74;
+        letter-spacing: 0;
+        font-family: 'Hiragino Kaku Gothic Pro', 'Hiragino', 'Kaku Gothic ProN' , sans-serif;
+        margin-bottom: 19px;
+        display: block;
+
+        @include sp {
+          font-size: unquote('max(2.8vw, 10.5px)');
+          line-height: 1.67;
+          margin-bottom: unquote('max(2.9vw, 11px)');
+        }
+      }
+
+      &-text {
+        font-size: unquote('clamp(10px, 1.2vw, 21px)');
+        line-height: 1.71;
+        letter-spacing: 0;
+        max-width: 650px;
+
+        @include sp {
+          font-size: unquote('max(2.8vw, 10.5px)');
+          line-height: 1.67;
+        }
+      }
+    }
+  }
+
+  &-credit {
+    font-family: 'EB Garamond', serif;
+    font-size: unquote('clamp(10px, 1vw, 17px)');
+    display: flex;
+    flex-direction: column;
+    gap: unquote('min(1.3vw, 24px)');
+    margin-top: unquote('min(2.8vw, 47px)');
+
+    @include sp {
+      margin-top: unquote('max(7.5vw, 28px)');
+      gap: unquote('max(3.4vw, 13px)');
+      font-size: unquote('max(2.9vw, 11px)');
+    }
+    
+    &-item {
+      line-height: 1.76;
+      transition: opacity $transitionTime;
+      width: fit-content;
+
+      @include sp {
+        letter-spacing: -0.025em;
+      }
+
+      &:hover {
+        opacity: $opacityVal;
+      }
+
+      &.seconds {
+        display: flex;
+        flex-direction: column;
+        gap: unquote('min(1.4vw, 26px)');
+  
+        @include sp {
+          gap: unquote('max(4vw, 15px)');
+        }
+
+        &:hover {
+          opacity: initial;
+        }
+
+        .item-credit-item-link {
+          transition: opacity $transitionTime;
+  
+          &:hover {
+            opacity: $opacityVal;
+          }
+        }
+      }
+
+      &-link {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        cursor: pointer;
+        width: fit-content;
+
+        @include sp {
+          gap: unquote('max(2.1vw, 8px)') unquote('max(1.3vw, 5px)');
+        }
+      }
+
+      &-detail {
+        text-decoration: underline;
+        letter-spacing: 0;
+        line-height: 1.4;
+        pointer-events: none;
+
+        @include sp {
+          letter-spacing: -0.025em;
+        }
+      }
+
+      span {
+        @include btn(#000, #fff);
+      }
+    }
+  }
+}

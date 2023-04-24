@@ -1,0 +1,645 @@
+<%
+itemDatas = [
+  {
+    pcImgPaths: './img/item/item1.webp',
+    spImgPaths: './img/item/item1-sp.webp',
+    lead: '世代を超えて愛されるサンダルを<br>気分新たにアップデート。',
+    text: '〈BIRKENSTOCK〉の人気モデル「Arosa」をアレンジした別注サンダルが登場。ベルト部分をスタイリングに映えるビッグバングルに変更し、アッパーにはブランドを代表するトープカラー、インソールにはブラックカラーを採用しました。ほどよく起毛感のある柔らかな素材は足馴染みに優れ、しっとりとした質感が落ち着いた雰囲気を醸し出します。もちろん、履き心地も文句なし。いつもと一味違う一足を、新たな夏の定番に迎えてみては。',
+    items: [
+      {
+        category: 'Sandals',
+        brand: 'BIRKENSTOCK for BEAUTY&YOUTH',
+        price: '¥23,100',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400022S0792',
+      }
+    ]
+  },
+  {
+    pcImgPaths: './img/item/item2.webp',
+    spImgPaths: './img/item/item2-sp.webp',
+    lead: '淡いカラーのストライプが<br>目を引く主役級シャツ。',
+    text: 'アメリカの古着から着想を得た、ゆったりとした身幅のボタンダウンシャツ。〈BEAUTY&YOUTH〉の今季のシーズンカラーであるパステル色を使い、オリジナルのストライプ柄を製作しました。ハリのあるコットン100％の生地にピーチ加工を施し、表面を微かに起毛させているのも特徴。独特のなめらかな肌触りがあるため、一枚でも着映えします。',
+    items: [
+      {
+        category: 'Shirt',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥12,980',
+        btn: 'CHECK',
+        num: '1216-199-2937',
+      }
+    ]
+  },
+  {
+    pcImgPaths: './img/item/item3.webp',
+    spImgPaths: './img/item/item3-sp.webp',
+    lead: '洗練されたカジュアルを実現する<br>爽やかなセットアップ。',
+    text: '涼しげなシアサッカー素材のボタンダウンシャツとイージーパンツが登場。ラフでありながらも大人なムードを醸し出す、落ち着いたトーンのチェック柄とストライプ柄を揃えました。サラッとした肌触りで通気性に優れており、手洗いで簡単にケアできるのも魅力。セットアップで着こなすのはもちろん、単品でもマルチに活躍してくれるはずです。',
+    items: [
+      {
+        category: 'Shirt',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥13,970',
+        btn: 'CHECK',
+        num: '1216-186-2914',
+      },
+      {
+        category: 'Pants',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥14,960',
+        btn: 'CHECK',
+        num: '1214-186-2916',
+      }
+    ]
+  },
+  {
+    pcImgPaths: './img/item/item4.webp',
+    spImgPaths: './img/item/item4-sp.webp',
+    lead: '多彩なシーンで活躍する、<br>着心地抜群の一枚。',
+    text: '表裏で織りの異なるラッセル調ジャージ素材を使用した、一枚着にぴったりのTシャツ。ベーシックな色味のほか、軽やかなイエローやグリーンなど、スタイリングに彩りをプラスするカラーも登場。リラックスしたシルエットでありながら、ニットライクな質感が上品さを醸し出してくれます。ボディと同色に仕上げた〈LACOSTE〉マークもポイントの一つ。同色のショーツとセットアップで取り入れるのもおすすめです。',
+    items: [
+      {
+        category: 'T-shirt',
+        brand: 'LACOSTE for BEAUTY&YOUTH',
+        price: '¥11,000',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023Y0068',
+      }
+    ]
+  },
+  {
+    pcImgPaths: './img/item/item5.webp',
+    spImgPaths: './img/item/item5-sp.webp',
+    lead: '国や年代を超えて愛される名建築家と<br>コラボレーションした貴重な一枚。',
+    text: '“近代建築の三大巨匠”の一人として知られるアメリカの建築家、フランク・ロイド・ライト。その代名詞ともいえる幾何学的な装飾を、Tシャツのグラフィックに落とし込みました。ライトが持つ唯一無二の美しさと豊かさを表現した〈BEAUTY&YOUTH〉限定のデザインは全5種類。ホワイトとブラックのカラー展開で、夏の装いに知的な印象を与えてくれます。',
+    items: [
+      {
+        category: 'T-shirt',
+        brand: 'Frank Lloyd Wright COLLECTION for BEAUTY&YOUTH',
+        price: '¥7,150',
+        btn: 'CHECK',
+        num: '1217-499-3285<br>1217-499-3286<br>1217-499-3287<br>1217-499-3288',
+      }
+    ]
+  },
+  {
+    pcImgPaths: './img/item/item6.webp',
+    spImgPaths: './img/item/item6-sp.webp',
+    lead: '夏を彩る、シンプルな中に<br>存在感のあるデザイン。',
+    text: 'ユーモアのあるフレーズを採用したロゴプリントや、シンプルなタイポグラフィをフィーチャーしたTシャツが人気の〈TANGTANG〉とコラボレーション。ブランドの初期から人気を博す「Cheat Day」シリーズのフォントを使い、〈BEAUTY&YOUTH〉限定のデザインが完成しました。プリントは、「Sweet Days」「Glory Days」「Youth Days」の3種類。その日の気分に合わせてTシャツを選ぶ、そんな朝のひとときがより楽しくなりそうです。',
+    items2: [
+      {
+        category: 'T-shirt',
+        brand: 'TANGTANG for BEAUTY&YOUTH',
+        items: [
+          {
+            name: '(left)¥7,700',
+            num: '1217-599-3225',
+            btn: 'CHECK'
+          },
+          {
+            name: '(right)¥7,700',
+            num: '1217-599-3224',
+            btn: 'CHECK'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    pcImgPaths: './img/item/item7.webp',
+    spImgPaths: './img/item/item7-sp.webp',
+    lead: 'ラフな装いに<br>上品な差し色をプラスする一着。',
+    text: 'アメリカ・テキサス州で1920年に誕生したワークウェアブランド〈FARAH〉を代表するアイテム、ワイドテーパードパンツを〈BEAUTY&YOUTH〉ならではのカラーに別注。乾いたオリーブやブルー、パープルがかったグレーなど、この季節に似合う色合いに仕上げました。膝下からゆるやかにテーパードがかかった、すっきりとしたシルエットもポイントです。',
+    items: [
+      {
+        category: 'Pants',
+        brand: 'FARAH for BEAUTY&YOUTH',
+        price: '¥20,900',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1253',
+      }
+    ]
+  },
+  {
+    pcImgPaths: './img/item/item8.webp',
+    spImgPaths: './img/item/item8-sp.webp',
+    lead: '軽やかなスタイリングを叶える<br>この夏のキーアイテム',
+    text: '軽い被り心地で通気性に優れたストローハットは、コーディネートに清涼感を加え、夏ムードを一気に高めてくれます。今季の〈BEAUTY&YOUTH〉は、ベーシックな中折れ帽はもちろん、トレンドのバケットハットやストラップの付いたサファリハットなど、バラエティ豊かにラインナップ。日常使いからフェスやアウトドアまで、幅広い場面で役立つこと必至です。',
+    items: [
+      {
+        category: '(top) Straw Hat',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥13,200',
+        btn: 'CHECK',
+        num: '1438-699-4328',
+      },
+      {
+        category: '(middle) Bucket Hat',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥8,800',
+        btn: 'CHECK',
+        num: '1438-699-4352',
+      },
+      {
+        category: '(bottom) Raffia Hat',
+        brand: 'THE NORTH FACE',
+        price: '¥9,900',
+        btn: 'CHECK',
+        num: '1438-499-4362',
+      }
+    ]
+  },
+  {
+    pcImgPaths: './img/item/item9.webp',
+    spImgPaths: './img/item/item9-sp.webp',
+    lead: '異なる個性を放つ、<br>夏のワードローブに欠かせない一品。',
+    text: 'この季節の必需品であるサングラス。今シーズンは日本発のアイウェアブランド〈ayame〉とタッグを組み、2つのモデルを作り上げました。リムからレンズに向けてなだらかに削るテレビジョンカットを施した「TORO」と、〈ayame〉のデビュー作である「NEWOLD」をさらに肉厚にし、特徴的な3ピンを加えた「NEWOLD2」。顔まわりが重い印象にならないよう、光に当たるとほんのり透け感が出るブラックカラーのフレームに仕上げたのもこだわりです。',
+    items2: [
+      {
+        category: 'Sunglasses',
+        brand: 'ayame for BEAUTY&YOUTH',
+        items: [
+          {
+            name: '(left)¥41,800',
+            num: '1444-599-1884',
+            btn: 'CHECK'
+          },
+          {
+            name: '(right)¥38,500',
+            num: '1444-599-1883',
+            btn: 'CHECK'
+          }
+        ]
+      }
+    ]
+  },
+]
+
+
+
+
+
+
+
+
+lookDatas = [
+  {
+    pcImgPaths: ['./img/look/look1.webp', './img/look/look2.webp'],
+    spImgPaths: ['./img/look/look1-sp.webp', './img/look/look2-sp.webp'],
+    items: [
+      {
+        category: 'Shirt',
+        brand: 'UNUSED for BEAUTY&YOUTH',
+        price: '¥28,600',
+        btn: 'CHECK',
+        num: '1262-599-0873'
+      },
+      {
+        category: 'T-shirt',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥4,400',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1227',
+      },
+      {
+        category: 'Pants',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥13,970',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023Y0048',
+      },
+      {
+        category: 'Belt',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥13,200',
+        btn: 'CHECK',
+        num: '1441-619-1635',
+      },
+      {
+        category: 'Shoes',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥30,910',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400022F0201',
+      },
+    ]
+  },
+  {
+    pcImgPaths: ['./img/look/look3.webp', './img/look/look4.webp'],
+    spImgPaths: ['./img/look/look3-sp.webp', './img/look/look4-sp.webp'],
+    items: [
+      {
+        category: 'T-shirt',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥6,930',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1605',
+      },
+      {
+        category: 'Pants',
+        brand: 'UNUSED for BEAUTY&YOUTH',
+        price: '¥31,900',
+        btn: 'CHECK',
+        num: '1262-599-0874',
+      },
+      {
+        category: 'Eyewear',
+        brand: 'ayame for BEAUTY&YOUTH',
+        price: '¥38,500',
+        btn: 'CHECK',
+        num: '1444-599-1883',
+      },
+      {
+        category: 'Shoes',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥20,900',
+        btn: 'CHECK',
+        num: '1431-699-8654',
+      },
+    ]
+  },
+  {
+    pcImgPaths: ['./img/look/look5.webp', './img/look/look6.webp'],
+    spImgPaths: ['./img/look/look5-sp.webp', './img/look/look6-sp.webp'],
+    items: [
+      {
+        category: 'Jacket',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥17,930',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023Y0039',
+      },
+      {
+        category: 'T-shirt',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥4,950',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1382',
+      },
+      {
+        category: 'Pants',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥12,980',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023Y0032',
+      },
+      {
+        category: 'Eyewear',
+        brand: 'UNITED ARROWS by KANEKO OPTICAL',
+        price: '¥19,800',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400023Y0001',
+      },
+      {
+        category: 'Sandals',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥25,300',
+        btn: 'CHECK',
+        num: '1431-699-8849',
+      },
+    ]
+  },
+  {
+    pcImgPaths: ['./img/look/look7.webp', './img/look/look8.webp'],
+    spImgPaths: ['./img/look/look7-sp.webp', './img/look/look8-sp.webp'],
+    items: [
+      {
+        category: 'Shirt',
+        brand: 'Niche for BEAUTY&YOUTH',
+        price: '¥19,800',
+        btn: 'CHECK',
+        num: '1216-599-2988',
+      },
+      {
+        category: 'T-shirt',
+        brand: 'TANGTANG for BEAUTY&YOUTH',
+        price: '¥7,700',
+        btn: 'CHECK',
+        num: '1217-599-3224',
+      },
+      {
+        category: 'Pants',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥12,980',
+        btn: 'CHECK',
+        num: '1214-199-8724',
+      },
+      {
+        category: 'Sandals',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥8,690',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400023S0646',
+      },
+      {
+        category: 'Hat',
+        brand: 'NEROLL for BEAUTY&YOUTH',
+        price: '¥9,900',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400022Y0081',
+      },
+    ]
+  },
+  {
+    pcImgPaths: ['./img/look/look9.webp', './img/look/look10.webp'],
+    spImgPaths: ['./img/look/look9-sp.webp', './img/look/look10-sp.webp'],
+    items: [
+      {
+        category: 'Shirt',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥14,960',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1696',
+      },
+      {
+        category: 'T-shirt',
+        brand: 'Hanes for BEAUTY&YOUTH',
+        price: '¥6,930',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1173',
+      },
+      {
+        category: 'Pants',
+        brand: 'FARAH for BEAUTY&YOUTH',
+        price: '¥20,900',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1253',
+      },
+      {
+        category: 'Sandals',
+        brand: 'BIRKENSTOCK for BEAUTY&YOUTH',
+        price: '¥23,100',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400022Y0076',
+      },
+    ]
+  },
+  {
+    pcImgPaths: ['./img/look/look11.webp', './img/look/look12.webp'],
+    spImgPaths: ['./img/look/look11-sp.webp', './img/look/look12-sp.webp'],
+    items: [
+      {
+        category: 'Polo Shirt',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥9,900',
+        btn: 'CHECK',
+        num: '1217-699-2955',
+      },
+      {
+        category: 'Shorts',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥13,970',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1746',
+      },
+      {
+        category: 'Belt',
+        brand: 'MAISON BOINET for BEAUTY&YOUTH',
+        price: '¥15,400',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400023S0408',
+      },
+      {
+        category: 'Shoes',
+        brand: 'Timberland fot BEAUTY&YOUTH',
+        price: '¥24,200',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400022Y0075',
+      },
+    ]
+  },
+  {
+    pcImgPaths: ['./img/look/look13.webp', './img/look/look14.webp'],
+    spImgPaths: ['./img/look/look13-sp.webp', './img/look/look14-sp.webp'],
+    items: [
+      {
+        category: 'Sweater',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥12,980',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1678',
+      },
+      {
+        category: 'Shirt',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥13,970',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1630',
+      },
+      {
+        category: 'Pants',
+        brand: 'MAISON BEAUTY&YOUTH',
+        price: '¥15,400',
+        btn: 'CHECK',
+        num: '1214-599-8839',
+      },
+      {
+        category: 'Shoes',
+        brand: 'Clarks Originals',
+        price: '¥25,300',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400022S0124',
+      },
+    ]
+  },
+  {
+    pcImgPaths: ['./img/look/look15.webp', './img/look/look16.webp'],
+    spImgPaths: ['./img/look/look15-sp.webp', './img/look/look16-sp.webp'],
+    items: [
+      {
+        category: 'Polo shirt',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥11,990',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1714',
+      },
+      {
+        category: 'Pants',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥14,960',
+        btn: 'CHECK',
+        num: '1214-186-2916',
+      },
+      {
+        category: 'Eyewear',
+        brand: 'UNITED ARROWS by KANEKO OPTICAL',
+        price: '¥19,800',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400023Y0001',
+      },
+      {
+        category: 'Sneakers',
+        brand: 'adidas Originals',
+        price: '¥12,100',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400023S0170',
+      },
+    ]
+  },
+  {
+    pcImgPaths: ['./img/look/look17.webp', './img/look/look18.webp'],
+    spImgPaths: ['./img/look/look17-sp.webp', './img/look/look18-sp.webp'],
+    items: [
+      {
+        category: 'Cut & Sewn',
+        brand: 'ATON for BEAUTY&YOUTH',
+        price: '¥17,600',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1520',
+      },
+      {
+        category: 'Pants',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥12,980',
+        btn: 'CHECK',
+        num: '1214-155-8853',
+      },
+      {
+        category: 'Cap',
+        brand: 'NEW ERA for BEAUTY&YOUTH',
+        price: '¥4,950',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/14384994313',
+      },
+      {
+        category: 'Shoes',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥22,000',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400023S0157',
+      },
+    ]
+  },
+  {
+    pcImgPaths: ['./img/look/look19.webp', './img/look/look20.webp'],
+    spImgPaths: ['./img/look/look19-sp.webp', './img/look/look20-sp.webp'],
+    items: [
+      {
+        category: 'Sweater',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥14,960',
+        btn: 'CHECK',
+        num: '1213-105-4010',
+      },
+      {
+        category: 'T-shirt',
+        brand: 'Hanes for BEAUTY&YOUTH',
+        price: '¥6,930',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1173',
+      },
+      {
+        category: 'Shorts',
+        brand: 'COMFORTABLE REASON for BEAUTY&YOUTH',
+        price: '¥20,790',
+        btn: 'CHECK',
+        num: '1219-599-2043',
+      },
+      {
+        category: 'Socks',
+        brand: 'LACOSTE for BEAUTY&YOUTH',
+        price: '¥2,200',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400023S0568',
+      },
+      {
+        category: 'Sneakers',
+        brand: 'Salomon',
+        price: '¥19,800',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400023S0288',
+      },
+      {
+        category: 'Eyewear',
+        brand: 'UNITED ARROWS by KANEKO OPTICAL',
+        price: '¥19,800',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400023Y0001',
+      },
+    ]
+  },
+  {
+    pcImgPaths: ['./img/look/look21.webp', './img/look/look22.webp'],
+    spImgPaths: ['./img/look/look21-sp.webp', './img/look/look22-sp.webp'],
+    items: [
+      {
+        category: 'T-shirt',
+        brand: 'loosejoints for BEAUTY&YOUTH',
+        price: '¥9,900',
+        btn: 'CHECK',
+        num: '1217-599-3052',
+      },
+      {
+        category: 'Pants',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥15,950',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1729',
+      },
+      {
+        category: 'Belt',
+        brand: 'MAISON BOINET for BEAUTY&YOUTH',
+        price: '¥15,400',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400023S0408',
+      },
+      {
+        category: 'Sandals',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥25,300',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400023S0530',
+      },
+      {
+        category: 'Necklace',
+        brand: 'TOMWOOD for BEAUTY&YOUTH',
+        price: '¥52,800',
+        btn: 'CHECK',
+        num: '1433-343-5529',
+      },
+    ]
+  },
+  {
+    pcImgPaths: ['./img/look/look23.webp', './img/look/look24.webp'],
+    spImgPaths: ['./img/look/look23-sp.webp', './img/look/look24-sp.webp'],
+    items: [
+      {
+        category: 'Shirt',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥13,970',
+        btn: 'CHECK',
+        num: '1216-199-2982',
+      },
+      {
+        category: 'T-shirt',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥4,400',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1227',
+      },
+      {
+        category: 'Pants',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥13,970',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1200023S1082',
+      },
+      {
+        category: 'Belt',
+        brand: 'MAISON BOINET for BEAUTY&YOUTH',
+        price: '¥15,400',
+        btn: 'BUY',
+        link: 'https://store.united-arrows.co.jp/brand/by/item/1400023S0408',
+      },
+      {
+        category: 'Shoes',
+        brand: 'BEAUTY&YOUTH',
+        price: '¥22,000',
+        btn: 'CHECK',
+        num: '1431-699-8431',
+      },
+    ]
+  },
+]
+%>

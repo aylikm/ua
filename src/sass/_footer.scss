@@ -1,0 +1,186 @@
+.footer {
+  font-family: 'EB Garamond', serif;
+  text-align: center;
+  
+  @include pc {
+    margin: unquote('min(5.5vw, 101px)') 0 30px;
+  }
+
+  @include sp {
+    margin: unquote('max(26.3vw, 98px)') 0 unquote('max(6.6vw, 25px)');
+  }
+
+  h2 {
+    font-size: unquote('min(2.1vw, 38px)');
+    line-height: 1.35;
+    letter-spacing: 0;
+    margin-bottom: unquote('min(4.2vw, 77px)');
+
+    @include sp {
+      font-size: unquote('max(5.7vw, 21.5px)');
+      margin-bottom: unquote('max(16.5vw, 62px)');
+    }
+  }
+
+  &-Totop {
+    font-size: unquote('clamp(10px, 1.5vw, 26px)');
+    letter-spacing: 0;
+    cursor: pointer;
+
+    @include pc {
+      transition: opaticy $transitionTime;
+
+      &:hover {
+        opacity: $opacityVal;
+      }
+    }
+
+    @include sp {
+      font-size: unquote('max(4.8vw, 18px)');
+    }
+  }
+
+  &-Links {
+    margin: unquote('min(1.9vw, 34px)') 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: unquote('min(1.9vw, 34px)');
+    font-size: unquote('clamp(10px, 1vw, 16px)');
+
+    @include sp {
+      font-size: unquote('max(3.4vw, 13px)');
+      margin:  unquote('max(5.3vw, 20px)') 0 0;
+      gap: unquote('max(6.6vw, 25px)');
+    }
+
+    a {
+      letter-spacing: 0;
+      text-decoration: underline;
+
+      @include pc {
+        transition: opacity $transitionTime;
+  
+        &:hover {
+          opacity: $opacityVal;
+        }
+      }
+    }
+  }
+
+  &-sns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    strong {
+      font-size: unquote('min(1.5vw, 26px)');
+      font-weight: normal;
+      letter-spacing: 0;
+
+      @include sp {
+        font-size: unquote('max(4.8vw, 18px)');
+      }
+    }
+
+    @include pc {
+      margin: unquote('min(3.1vw, 57px) 0 min(3.6vw, 66px)');
+    }
+
+    @include sp {
+      margin: unquote('max(15.2vw, 57px) 0 max(14.9vw, 56px)');
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+
+      @include pc {
+        gap: unquote('min(2.3vw, 41px)');
+        margin-top: 15px;
+      }
+
+      @include sp {
+        gap: unquote('max(5.6vw, 21px)');
+        margin-top: unquote('max(5vw, 19px)');
+      }
+
+      li {
+        @include pc {
+          &:not(:last-child) {
+            width: unquote('min(3.2vw, 59.4px)');
+            height: unquote('min(3.2vw, 59.4px)');
+          }
+
+          &:last-child {
+            width: unquote('min(2.5vw, 44.89px)');
+            height: unquote('min(2.5vw, 44.89px)');
+          }
+        }
+
+        @include sp {
+          width: unquote('max(8vw, 30px)');
+          height: unquote('max(8.2vw, 31px)');
+
+          &:last-child {
+            width: unquote('max(6vw, 22.68px)');
+            height: unquote('max(6vw, 22.68px)');
+          }
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    a {
+      @include pc {
+        transition: $transitionTime;
+  
+        &:hover {
+          opacity: $opacityVal;
+        }
+
+      }
+    }
+
+    img {
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  h3 {
+    @include sp {
+      display: flex;
+      justify-content: center;
+    }
+
+    a {
+      transition: $transitionTime;
+
+      &:hover {
+        opacity: $opacityVal;
+      }
+    }
+    
+    img {
+      aspect-ratio: 341 / 70;
+      width: unquote('min(17.8vw, 340px)');
+      
+      @include sp {
+        width: unquote('max(54.5vw, 204.5px)');        
+      }
+    }
+  }
+
+  &-Copy {
+    font-size: unquote('clamp(10px, 1vw, 15px)');
+    letter-spacing: 0;
+    margin-top: unquote('min(5vw, 94px)');
+
+    @include sp {
+      font-size: unquote('max(2.2vw, 7.5px)');
+      margin-top: unquote('max(17.4vw, 65px)');
+    }
+  }
+}

@@ -1,0 +1,75 @@
+<%- include('./_listArr') %>
+
+<% const current = 'item' %>
+<%- include('./_head', { current }) %>
+
+<main class="item">
+  <%- include('./_nav', { current }) %>
+  <%- include('./_firstview', { current }) %>
+
+  <div class="item-contents">
+    <%- include('./_lead') %>
+
+    <% itemDatas.forEach(function(data, index) { %>
+    <ul class="item-list">
+      <li class="item-list-item fadein">
+        <picture>
+          <source srcset="<%= data.spImgPaths %>" media="(max-width: 767px)" />
+          <img src="<%= data.pcImgPaths %>" alt="" >
+        </picture>
+      </li>
+      <li class="item-list-item fadein delay">
+        <div class="item-list-item-desc">
+          <strong class="item-list-item-lead fadein"><%- data.lead %></strong>
+          <p class="item-list-item-text fadein"><%= data.text %></p>
+          <ul class="item-credit js-item-alignWidth-<%= index %>">
+            <% if (data.items) { %>
+            <% data.items.forEach(function(item){ %>
+              <li class="item-credit-item js-alignWidth-standard fadein">
+                <% if (item.btn === 'BUY') { %>
+                <a href="<%= item.link %>" class="item-credit-item-link">
+                  <p class="item-credit-item-detail">
+                    <strong><%= item.category %></strong> <%= item.brand %> <%= item.price %>
+                  </p>
+                  <span><%= item.btn %></span>
+                </a>
+                <% } else { %>
+                <div class="item-credit-item-link js-ModalBtn" data-brand="<%= item.brand%>" data-num="<%= item.num%>">
+                  <p class="item-credit-item-detail">
+                    <strong><%= item.category %></strong> <%= item.brand %> <%= item.price %>
+                  </p>
+                  <span><%= item.btn %></span>
+                </div>
+                <% } %>
+              </li>
+            <% }) %>
+            <% } else if (data.items2) { %>
+            <% data.items2.forEach(function(item){ %>
+              <li class="item-credit-item js-alignWidth-standard seconds">
+                <p class="fadein">
+                  <strong><%= item.category %></strong> <%= item.brand %>
+                </p>
+                <% item.items.forEach(function(unit){ %>
+                <div class="item-credit-item-link fadein js-ModalBtn" data-brand="<%= item.brand%>" data-num="<%= unit.num%>">
+                  <p class="item-credit-item-detail"><%= unit.name %></p>
+                  <span><%= unit.btn %></span>
+                </div>
+                <% }) %>
+              </li>
+            <% }) %>
+            <% } %>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <% }) %>
+  </div>
+
+  <%- include('./_footer', { current }) %>
+
+  <%- include('./_modal') %>
+
+</main>
+
+</body>
+</html>
