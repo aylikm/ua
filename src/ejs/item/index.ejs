@@ -1,22 +1,26 @@
-<%- include('./_listArr') %>
-
 <% const current = 'item' %>
-<%- include('./_head', { current }) %>
+<%- include('../_listArr') %>
+<%- include('../_head', { current }) %>
 
 <main class="item">
-  <%- include('./_nav', { current }) %>
-  <%- include('./_firstview', { current }) %>
+  <%- include('../_nav', { current }) %>
+  <%- include('../_firstview', { current }) %>
 
   <div class="item-contents">
-    <%- include('./_lead') %>
+    <%- include('../_lead') %>
 
     <% itemDatas.forEach(function(data, index) { %>
     <ul class="item-list">
       <li class="item-list-item fadein">
-        <picture>
-          <source srcset="<%= data.spImgPaths %>" media="(max-width: 767px)" />
-          <img src="<%= data.pcImgPaths %>" alt="" >
-        </picture>
+        <figure>
+          <picture>
+            <source srcset="<%= data.spImgPaths %>" media="(max-width: 767px)" />
+            <img src="<%= data.pcImgPaths %>" alt="" >
+            <% if (index === 4) { %>
+            <figcaption>&reg;/TM/&copy;FLWF.</figcaption>
+            <% } %>
+          </picture>
+        </figure>
       </li>
       <li class="item-list-item fadein delay">
         <div class="item-list-item-desc">
@@ -65,9 +69,9 @@
     <% }) %>
   </div>
 
-  <%- include('./_footer', { current }) %>
+  <%- include('../_footer', { current }) %>
 
-  <%- include('./_modal') %>
+  <%- include('../_modal') %>
 
 </main>
 

@@ -1,6 +1,5 @@
-<%- include('./_listArr') %>
-
 <% const current = 'look' %>
+<%- include('./_listArr') %>
 <%- include('./_head', { current }) %>
 
 <main class="look">
@@ -14,10 +13,12 @@
     <ul class="look-list">
       <% data.pcImgPaths.forEach(function(path, pathIndex){ %>
       <li class="look-list-item fadein <% if (pathIndex === 1) { %>delay<% } %>">
-        <picture>
-          <source srcset="<%= data.spImgPaths[pathIndex] %>" media="(max-width: 767px)" />
-          <img src="<%= path %>" alt="" >
-        </picture>
+        <figure>
+          <picture>
+            <source srcset="<%= data.spImgPaths[pathIndex] %>" media="(max-width: 767px)" />
+            <img src="<%= path %>" alt="" >
+          </picture>
+        </figure>
         <% if ((index % 2 === 0 && pathIndex === 1) || index % 2 !== 0) { %>
         <ul class="look-credit js-look-alignWidth-<%= index %> fadeinCredit<% if (index % 2 !== 0) { %><% if (pathIndex === 1) { %> pc-none<% } else { %> sp-none<% } %><% } %>">
           <% data.items.forEach(function(item){ %>

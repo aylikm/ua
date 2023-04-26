@@ -28,7 +28,7 @@
       <% sns.forEach(function(data) { %>
       <li>
         <a href="<%- data.link %><%- url %><%- current %>.html" target="_blank">
-          <img src="./img/<%- data.name %>.svg" alt="<%- data.name %>">
+          <img src="<%- path %>img/<%- data.name %>.svg" alt="<%- data.name %>">
         </a>
       </li>
       <% }) %>
@@ -37,7 +37,7 @@
 
   <h3>
     <a href="https://store.united-arrows.co.jp/brand/by/">
-      <img src="./img/logo.svg" alt="BEAUTY&YOUTH UNITED ARROWS">
+      <img src="<%- path %>img/logo.svg" alt="BEAUTY&YOUTH UNITED ARROWS">
     </a>
   </h3>
   <p class="footer-Copy">&copy; UNITED ARROWS LTD. ALL RIGHTS RESERVED.</p>

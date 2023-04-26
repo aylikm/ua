@@ -39,21 +39,21 @@ const sassComp = () => {
 //     .pipe( gulp.dest( "./dist" ) );
 // }
 const lookEjs = () => {
-  return gulp.src(["src/ejs/look.ejs", '!' + "src/ejs/_*.ejs"])
+  return gulp.src(["src/ejs/index.ejs", '!' + "src/ejs/_*.ejs"])
     .pipe(ejs())
-    .pipe(rename("look.html"))
+    .pipe(rename("index.html"))
     .pipe( gulp.dest( "./dist" ) );
 }
 const itemEjs = () => {
-  return gulp.src(["src/ejs/item.ejs", '!' + "src/ejs/_*.ejs"])
+  return gulp.src(["src/ejs/item/index.ejs", '!' + "src/ejs/_*.ejs"])
     .pipe(ejs())
-    .pipe(rename("item.html"))
-    .pipe( gulp.dest( "./dist" ) );
+    .pipe(rename("index.html"))
+    .pipe( gulp.dest( "./dist/item" ) );
 }
 
 const watchFiles = () => {
   gulp.watch( "src/sass/*.scss", gulp.series( [sassComp, browserSyncReload] ) );
-  gulp.watch( "src/ejs/*.ejs", gulp.series( [lookEjs, itemEjs, browserSyncReload] ) );
+  gulp.watch( "src/**/*.ejs", gulp.series( [lookEjs, itemEjs, browserSyncReload] ) );
   gulp.watch( "src/js/*.js", gulp.series( [compJs, browserSyncReload] ) );
 }
 
