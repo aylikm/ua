@@ -105,10 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
         new alignWidth().align(document.querySelector('.js-look-alignWidth-0'), 1, [2, 3, 4]);
         new alignWidth().alignMulti(document.querySelector('.js-look-alignWidth-1'), [0, 1], [[3], [2]]);
         new alignWidth().align(document.querySelector('.js-look-alignWidth-2'), 4, [0, 1, 2]);
-        new alignWidth().align(document.querySelector('.js-look-alignWidth-3'), 3, [2]);
+        // new alignWidth().align(document.querySelector('.js-look-alignWidth-3'), 3, [2]);
         new alignWidth().align(document.querySelector('.js-look-alignWidth-4'), 2, [1]);
         new alignWidth().align(document.querySelector('.js-look-alignWidth-5'), 0, [1]);
-        new alignWidth().align(document.querySelector('.js-look-alignWidth-6'), 0, [1]);
+        new alignWidth().align(document.querySelector('.js-look-alignWidth-6'), 0, [1, 2]);
         new alignWidth().align(document.querySelector('.js-look-alignWidth-7'), 0, [1]);
         new alignWidth().align(document.querySelector('.js-look-alignWidth-10'), 3, [1]);
         new alignWidth().align(document.querySelector('.js-look-alignWidth-11'), 1, [0, 2, 4]);

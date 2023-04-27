@@ -39,16 +39,16 @@
         }
       }
 
-      &:nth-of-type(4) {
-        .look-list-item:nth-of-type(2) {
-          .look-credit-item:nth-of-type(3),
-          .look-credit-item:nth-of-type(4) {
-            p {
-              min-width: unquote('max(39.5vw, 151px)');
-            }
-          }
-        }
-      }
+      // &:nth-of-type(4) {
+      //   .look-list-item:nth-of-type(2) {
+      //     .look-credit-item:nth-of-type(3),
+      //     .look-credit-item:nth-of-type(4) {
+      //       p {
+      //         min-width: unquote('max(39.5vw, 151px)');
+      //       }
+      //     }
+      //   }
+      // }
 
       &:nth-of-type(5) {
         .look-list-item:nth-of-type(2) {
@@ -75,7 +75,8 @@
       &:nth-of-type(7) {
         .look-list-item:nth-of-type(2) {
           .look-credit-item:nth-of-type(1),
-          .look-credit-item:nth-of-type(2) {
+          .look-credit-item:nth-of-type(2),
+          .look-credit-item:nth-of-type(3) {
             p {
               min-width: unquote('max(41.2vw, 156px)');
             }
