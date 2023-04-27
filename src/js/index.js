@@ -83,7 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         const standardWidth = target.querySelectorAll('.js-alignWidth-standard p')[standardNum].clientWidth
         changeNums.forEach((num) => {
-          target.querySelectorAll('.js-alignWidth-standard p')[num].style.width = `${standardWidth}px`
+          if (target.querySelectorAll('.js-alignWidth-standard p')[num]) {
+            target.querySelectorAll('.js-alignWidth-standard p')[num].style.width = `${standardWidth}px`
+          }
         })
       }, 400);
     }
