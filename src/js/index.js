@@ -87,23 +87,23 @@ document.addEventListener('DOMContentLoaded', () => {
         })
       }, 400);
     }
-    alignMulti(target, standardNumMulti, changeNumsMulti) {
-      setTimeout(() => {
-        standardNumMulti.forEach((standardNum, index) => {
-          const standardWidth = target.querySelectorAll('.js-alignWidth-standard p')[standardNum].clientWidth
-          changeNumsMulti[index].forEach((changeNum) => {
-            target.querySelectorAll('.js-alignWidth-standard p')[changeNum].style.width = `${standardWidth}px`
-          })
-        })
-      }, 400);
-    }
+    // alignMulti(target, standardNumMulti, changeNumsMulti) {
+    //   setTimeout(() => {
+    //     standardNumMulti.forEach((standardNum, index) => {
+    //       const standardWidth = target.querySelectorAll('.js-alignWidth-standard p')[standardNum].clientWidth
+    //       changeNumsMulti[index].forEach((changeNum) => {
+    //         target.querySelectorAll('.js-alignWidth-standard p')[changeNum].style.width = `${standardWidth}px`
+    //       })
+    //     })
+    //   }, 400);
+    // }
   }
 
   const aligns = () => {
     if (window.innerWidth > 767) {
       if (document.querySelector('.js-look-alignWidth-0')) {
         new alignWidth().align(document.querySelector('.js-look-alignWidth-0'), 1, [2, 3, 4]);
-        new alignWidth().alignMulti(document.querySelector('.js-look-alignWidth-1'), [0, 1], [[3], [2]]);
+        new alignWidth().align(document.querySelector('.js-look-alignWidth-1'), 1, [2]);
         new alignWidth().align(document.querySelector('.js-look-alignWidth-2'), 4, [0, 1, 2]);
         // new alignWidth().align(document.querySelector('.js-look-alignWidth-3'), 3, [2]);
         new alignWidth().align(document.querySelector('.js-look-alignWidth-4'), 2, [1]);
