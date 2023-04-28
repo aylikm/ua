@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', (e) => {
         const modal = document.querySelector('.common-Modal')
         modal.classList.add('active')
-        console.log(e.target);
         modal.querySelector('.js-Modal-Num').innerHTML = e.target.dataset.num
         modal.querySelector('.js-Modal-Brand').innerHTML = e.target.dataset.brand;
         document.querySelector('html').style.overflow = 'hidden'

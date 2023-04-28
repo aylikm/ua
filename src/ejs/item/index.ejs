@@ -54,10 +54,17 @@
                   <strong><%= item.category %></strong> <%= item.brand %>
                 </p>
                 <% item.items.forEach(function(unit){ %>
-                <div class="item-credit-item-link fadein js-ModalBtn" data-brand="<%= item.brand%>" data-num="<%= unit.num%>">
-                  <p class="item-credit-item-detail"><%= unit.name %></p>
-                  <span><%= unit.btn %></span>
-                </div>
+                  <% if (unit.btn === 'BUY') { %>
+                  <a href="<%= unit.link %>" class="item-credit-item-link fadein">
+                    <p class="item-credit-item-detail"><%= unit.name %></p>
+                    <span><%= unit.btn %></span>
+                  </a>
+                  <% } else { %>
+                  <div class="item-credit-item-link fadein js-ModalBtn" data-brand="<%= item.brand%>" data-num="<%= unit.num%>">
+                    <p class="item-credit-item-detail"><%= unit.name %></p>
+                    <span><%= unit.btn %></span>
+                  </div>
+                  <% } %>
                 <% }) %>
               </li>
             <% }) %>
